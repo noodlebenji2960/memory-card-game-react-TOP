@@ -1,0 +1,9 @@
+.inGameScreen{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    width: 90vw;
+    height: min-content;
+    flex-flow: row wrap;
+    gap: 5px;
+}

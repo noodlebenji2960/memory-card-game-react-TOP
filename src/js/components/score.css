@@ -1,0 +1,19 @@
+.scoreBoard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 5vh;
+    color: black;
+    padding: 0px 20px;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.bestScore{
+    text-align: right;
+}
+
+.score{
+    color: brown;
+    font-size: 1.5rem;
+    font-weight: 1000;
+}

@@ -1,0 +1,33 @@
+.logoBack, .logoFront{
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+}
+
+.logoBack{
+    mask-image: url("/src/assets/logo-back1.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1 / 0.5;
+    background: 
+        linear-gradient(45deg, rgba(0,0,0,1) 80%, rgba(255, 255, 255, 1));
+    z-index: 99;
+}
+
+.logoFront{
+    content: "";
+    position: absolute;
+    mask-image: url("/src/assets/logo-front1.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: 
+        linear-gradient(-145deg, rgba(255, 255, 255, 0) 4%, rgba(255, 0, 0, 0.6)),
+        no-repeat center/100% url("/src/assets/textures/parchment1.jpg");
+    z-index: 99;
+}

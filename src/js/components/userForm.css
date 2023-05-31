@@ -1,0 +1,79 @@
+.startScreenForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 7%;
+    width: 40%;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 4%;
+}
+
+.startScreenForm input, .startScreenForm button, .startScreenForm div{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin: 0px;
+    font-size: 0.9rem;
+}
+.startScreenForm div:has(input[type="text"]){
+    display: flex;
+    justify-content: center;
+    mask: no-repeat center url("/src/assets/textures/border2.svg");
+    mask-size: contain;
+    width: 50%;
+    height: 50px;
+    gap: 0px;
+    background: white;
+    padding: 0px 20px;
+}
+
+.startScreenForm div:has(button):nth-child(2){
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-size: 26px;
+    display: none;
+    cursor: auto;
+    gap: 10%;
+}
+
+.startScreenForm span{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    height: 100%;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.formMessagePrompt{
+    user-select: none;
+}
+
+.startScreenForm input[type="text"]{
+    background: none;
+    border: none;
+}
+
+.startScreenForm input[type="text"]:focus{
+    outline: none;
+}
+
+button{
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10%;
+    background: 
+        linear-gradient(190deg, rgba(255, 255, 255, 0) 4%, rgba(255, 0, 0, 0.6)),
+        no-repeat center/cover url("/src/assets/textures/parchment1.png");
+}
+
+button:hover{
+    outline: black 2px solid;
+}

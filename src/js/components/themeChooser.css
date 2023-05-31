@@ -1,0 +1,77 @@
+.themeSelection{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  bottom: 65%;
+}
+
+.themeCard{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: "";
+    transition: bottom 0.5s;
+    bottom: 0%;
+}
+
+.themeOption1{
+    transform: translateX(-150%) rotate(-9deg);
+    z-index: 1;
+}
+.themeOption2{
+    transform: translateX(-90%) rotate(-3deg);
+    z-index: 2;
+}
+.themeOption3{
+    transform: translateX(0%) rotate(1deg);
+    z-index: 3;
+}
+.themeOption4{
+    transform: translateX(90%) rotate(3deg);
+    z-index: 2;
+}
+.themeOption5{
+    transform: translateX(170%) rotate(12deg);
+    z-index: 1;
+}
+
+.peakUp .card-wrapper{
+    animation: peakUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes peakUp{
+    from {
+      transform: translateY(var(--card-height));
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+  
+  .peakDown .card-wrapper{
+    animation-name: peakDown;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes peakDown{
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(var(--card-height));
+    }
+  }
+
+  .hoverUp:hover{
+    z-index: 50;
+    bottom: 30%;
+  }

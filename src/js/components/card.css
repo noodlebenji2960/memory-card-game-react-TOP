@@ -1,0 +1,146 @@
+/*card styles*/
+:root{
+    --card-height: 100%;
+}
+
+.card-wrapper {
+    cursor: pointer;
+    padding: calc(var(--card-height)/18);
+    margin: calc(var(--card-height)/36);
+    transition: transform 0.5s ease-out;
+    width: 100%;
+    height: 100%;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    user-select: none;
+}
+
+.card {
+    height: var(--card-height);
+    aspect-ratio: 1 / 1.5;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.card-inner{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-offset: -1px;
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+
+.glare{
+    position: absolute;
+    transform-origin: 0% 0%; 
+    top: 50%;
+    left: 50%;
+    width: calc(var(--card-height)*1.8); 
+    aspect-ratio: 1 / 2;
+    transform: rotate(0deg) translate(-50%, -50%); 
+    background: linear-gradient(-90deg,rgb(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.7) 80%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cardShadow {
+    position: absolute;
+    top: var(--card-height);
+    width: calc(var(--card-height)/2);
+    height: calc(var(--card-height/100));
+    border-radius: 50%;
+    box-shadow: 0px calc(var(--card-height)/13.75) calc(var(--card-height)/18) 1px rgb(43, 43, 43);
+    transition: transform 0.3s ease-out;
+    background: transparent;
+}
+
+.card-wrapper, .card{
+    transform-style: preserve-3d;
+}
+
+.card-wrapper, .card-inner{
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    position: relative;
+}
+
+.card-wrapper, .card, .card-inner, .glare{
+    border-radius: calc(var(--card-height)/20);
+}
+
+.frontface,
+.backface {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-height: var(--card-height);
+  -ms-transition: transform 1s cubic-bezier(.4,.2,.2,1);
+  transition: transform 1s cubic-bezier(.4,.2,.2,1);
+  -webkit-transition: transform 1s cubic-bezier(.4,.2,.2,1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.frontface {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-color: black;
+}
+
+.flip .frontface {
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.backface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip .backface {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.card-wrapper img{
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
